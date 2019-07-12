@@ -1,12 +1,14 @@
 {
-  "name": "Socket PubSub",
+  "name": "Socket",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "server:prod": "node_modules/.bin/pm2 start process.yml",
     "socket:start": "nodemon --watch api ./api/socket.js --exec babel-node --presets env",
-    "server:start": "nodemon --watch api ./api/server.js --exec babel-node --presets env"
+    "server:start": "nodemon --watch api ./api/server.js --exec babel-node --presets env",
+    "socket.emit:start": "nodemon --watch api ./api/socket.emit.js --exec babel-node --presets env",
+    "server.emit:start": "nodemon --watch api ./api/server.emit.js --exec babel-node --presets env"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -36,6 +38,7 @@
     "socket.io": "^2.1.0",
     "socket.io-client": "^2.1.0",
     "socket.io-redis": "^5.2.0",
+    "socket.io-emitter": "^3.1.1",
     "uuid": "^3.2.1"
   }
 }
