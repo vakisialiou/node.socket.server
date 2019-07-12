@@ -16,7 +16,9 @@ sub.on('subscribe', function (channel, count) {
 });
 
 sub.on('message', function (channel, message) {
-  console.log(channel, message)
+  if (channel === 'init-chanel') {
+    console.log(channel, message)
+  }
 })
 
 sub.subscribe('init-chanel')
